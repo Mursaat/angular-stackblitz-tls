@@ -1,7 +1,26 @@
-/* Add application styles & imports to this file! */
+// Include font
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// Include material icons font
+@import '~material-icons/iconfont/material-icons.scss';
+$material-icons-font-path: '~material-icons/iconfont/';
+
+// Include Material Theme
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
-body * {
+body *:not(.mat-icon) {
   font-family: 'Inter', sans-serif !important;
+}
+
+// Don't use regular mat-icon font, use rounded icons
+.mat-icon {
+  user-select: none;
+  // Disable this stylelint rule, we don't want fallback because it's an icon font
+  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+  font-family: 'Material Icons Round';
+
+  // Prevent native tooltip to display when hovering svg
+  svg {
+    pointer-events: none;
+  }
 }

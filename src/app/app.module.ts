@@ -46,9 +46,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const MAT_MODULES = [
   A11yModule,
@@ -102,7 +102,12 @@ const MAT_MODULES = [
 ];
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, ...MAT_MODULES, FlexLayoutModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ...MAT_MODULES,
+  ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
 })
