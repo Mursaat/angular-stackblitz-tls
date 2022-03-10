@@ -49,6 +49,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const MAT_MODULES = [
   A11yModule,
@@ -107,6 +108,7 @@ const MAT_MODULES = [
     BrowserAnimationsModule,
     FormsModule,
     ...MAT_MODULES,
+    FlexLayoutModule,
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
