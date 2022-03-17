@@ -1,9 +1,7 @@
 // Include font
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
-// Include material icons font
-@import '~material-icons/iconfont/material-icons.scss';
-$material-icons-font-path: '~material-icons/iconfont/';
+@import url('https://fonts.googleapis.com/css?family=Material+Icons+Round');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
 
 // Include Material Theme
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
@@ -14,13 +12,33 @@ body *:not(.mat-icon) {
 
 // Don't use regular mat-icon font, use rounded icons
 .mat-icon {
-  user-select: none;
-  // Disable this stylelint rule, we don't want fallback because it's an icon font
-  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
-  font-family: 'Material Icons Round';
+  &:not([fontset]) {
+    font-family: 'Material Icons Round';
+  }
 
   // Prevent native tooltip to display when hovering svg
   svg {
     pointer-events: none;
+  }
+}
+
+.fill-height {
+  height: 100%;
+}
+
+.fill-width {
+  width: 100%;
+}
+
+body {
+  background-image: url(https://i.imgur.com/kUAN8VZ.jpg);
+  animation: bg-scrolling 16s infinite;
+  animation-timing-function: linear;
+  background-size: 400px 400px;
+
+  @keyframes bg-scrolling {
+    0% {
+      background-position: 400px 400px;
+    }
   }
 }

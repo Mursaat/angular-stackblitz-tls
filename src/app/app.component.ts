@@ -2,9 +2,9 @@ import {
   ChangeDetectionStrategy,
   Component,
   HostBinding,
-  VERSION,
   ViewEncapsulation,
 } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'my-app',
@@ -17,5 +17,17 @@ export class AppComponent {
   @HostBinding('class.my-app')
   public hasBoundClass = true;
 
-  name = 'Angular ' + VERSION.major;
+  public form: FormGroup;
+
+  public constructor(private fb: FormBuilder) {
+    this.form = this.buildForm();
+  }
+
+  private buildForm(): FormGroup {
+    return this.fb.group({
+      email: [''],
+      password: [''],
+      passwordConfirmation: [''],
+    });
+  }
 }

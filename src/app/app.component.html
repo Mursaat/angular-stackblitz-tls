@@ -1,6 +1,31 @@
-<h1 class="mat-h1 my-app__title">Sign Up</h1>
-<mat-form-field appearance="fill">
-  <mat-label>Email</mat-label>
-  <input matInput autocomplete="off" />
-  <mat-icon matSuffix>send</mat-icon>
-</mat-form-field>
+<div
+  [formGroup]="form"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+  class="fill-height"
+>
+  <mat-card fxLayout="column" fxLayoutAlign="start center" class="my-app__card">
+    <h1 class="mat-h1 my-app__title">Sign Up</h1>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input formControlName="email" matInput autocomplete="off" />
+      <mat-icon matSuffix fontSet="fa-solid" fontIcon="fa-at"></mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input formControlName="password" matInput autocomplete="off" />
+      <mat-icon matSuffix fontSet="fa-solid" fontIcon="fa-lock"></mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Confirmation</mat-label>
+      <input
+        formControlName="passwordConfirmation"
+        matInput
+        autocomplete="off"
+      />
+      <mat-icon matSuffix fontSet="fa-solid" fontIcon="fa-lock"></mat-icon>
+    </mat-form-field>
+  </mat-card>
+</div>
